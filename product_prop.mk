@@ -12,7 +12,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Graphics
 PRODUCT_PRODUCT_PROPERTIES += \
-    debug.sf.latch_unsignaled=1
+    debug.sf.latch_unsignaled=1 \
+    debug.sf.disable_backpressure=1 \
+    ro.opengles.version=196610
 
 # LMKD
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -34,3 +36,26 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Zygote
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.device_config.runtime_native.usap_pool_enabled=true
+
+# USB
+PRODUCT_PRODUCT_PROPERTIES += \
+    dev.usbsetting.embedded=on
+# Dalvik/Art
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.slsi_platform=1 \
+    debug.hwc.winupdate=1 \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=192m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=8m
+    
+ # RADIO
+PRODUCT_PRODUCT_PROPERTIES += \
+    vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so \
+    vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
+    
+# FRP Partition
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.frp.pst=/dev/block/platform/13500000.dwmmc0/by-name/PERSISTENT
