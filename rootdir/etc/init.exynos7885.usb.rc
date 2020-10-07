@@ -1,5 +1,3 @@
-# Copyright (C) 2020 Prashantpaddune
-
 on init
     mount configfs none /sys/kernel/config
     mkdir /sys/kernel/config/usb_gadget/g1

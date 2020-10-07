@@ -6,6 +6,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
+# epdg
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.vendor.epdg.support=true
 # fastbootd
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.fastbootd.available=true

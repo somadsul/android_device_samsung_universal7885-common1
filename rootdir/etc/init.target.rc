@@ -1,6 +1,11 @@
+import /vendor/etc/init/init.exynos7885.rc
+import /vendor/etc/init/ueventd.rc
+import /vendor/etc/init/init.exynos7885.usb.rc
+import /vendor/etc/init/init.baseband.rc
+
 on init
     # Disable vendor overlay
-    mount none /vendor/lost+found /vendor/overlay bind
+    mount none system/vendor/lost+found system/vendor/overlay bind
 
     write /dev/blkio/background/blkio.weight 500
 
@@ -61,20 +66,6 @@ on post-fs-data
     # USB conn_gadget device (DeXonPC, Samsung Flow)
     chown system system /dev/android_ssusbcon
     chmod 0660 /dev/android_ssusbcon
-
-	#BUS
-    chown system radio /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
-    chown system radio /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
-    chmod 0664 /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
-    chmod 0444 /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
-
-    #input booster
-    chown radio system /sys/class/input_booster/level
-    chown radio system /sys/class/input_booster/head
-    chown radio system /sys/class/input_booster/tail
-    chmod 0664 /sys/class/input_booster/level
-    chmod 0664 /sys/class/input_booster/head
-    chmod 0664 /sys/class/input_booster/tail
 
 	# Fix the access permissions and group ownership for 'bt_config.conf'
     chown radio system /sys/class/input_booster/touchkey/level
@@ -292,58 +283,6 @@ on boot
     chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
     chown system radio /sys/class/sensors/accelerometer_sensor/lowpassfilter
     chown system system /sys/class/sensors/accelerometer_sensor/dhr_sensor_info
-
-# Gyro Sensor
-    chown system radio /sys/class/sensors/gyro_sensor/name
-    chown system radio /sys/class/sensors/gyro_sensor/vendor
-    chown system radio /sys/class/sensors/gyro_sensor/selftest_revised
-    chown system radio /sys/class/sensors/gyro_sensor/power_on
-    chown system radio /sys/class/sensors/gyro_sensor/power_off
-    chown system radio /sys/class/sensors/gyro_sensor/selftest
-    chown system media /sys/class/sensors/gyro_sensor/temperature
-
-# Magnetic Sensor
-    chown system radio /sys/class/sensors/magnetic_sensor/name
-    chown system radio /sys/class/sensors/magnetic_sensor/vendor
-    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
-    chown system radio /sys/class/sensors/magnetic_sensor/adc
-    chown system radio /sys/class/sensors/magnetic_sensor/asa
-    chown system radio /sys/class/sensors/magnetic_sensor/dac
-    chown system radio /sys/class/sensors/magnetic_sensor/chk_registers
-    chown system radio /sys/class/sensors/magnetic_sensor/selftest
-    chown system system /sys/class/sensors/magnetic_sensor/dhr_sensor_info
-
-# Proximity Sensor
-    chown system radio /sys/class/sensors/proximity_sensor/name
-    chown system radio /sys/class/sensors/proximity_sensor/vendor
-    chown system radio /sys/class/sensors/proximity_sensor/state
-    chown system radio /sys/class/sensors/proximity_sensor/raw_data
-    chown system radio /sys/class/sensors/proximity_sensor/barcode_emul_en
-    chown system radio /sys/class/sensors/proximity_sensor/prox_avg
-    chown system radio /sys/class/sensors/proximity_sensor/prox_cal
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_high
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_low
-    chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
-    chown system radio /sys/class/sensors/proximity_sensor/prox_trim
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_detect_high
-    chown system radio /sys/class/sensors/proximity_sensor/thresh_detect_low
-    chown system radio /sys/class/sensors/proximity_sensor/prox_alert_thresh
-    chown system system /sys/class/sensors/proximity_sensor/dhr_sensor_info
-
-# Light Sensor
-    chown system radio /sys/class/sensors/light_sensor/name
-    chown system radio /sys/class/sensors/light_sensor/vendor
-    chown system radio /sys/class/sensors/light_sensor/lux
-    chown system radio /sys/class/sensors/light_sensor/raw_data
-    chown system radio /sys/class/sensors/light_sensor/brightness
-    chown system radio /sys/class/sensors/light_sensor/light_circle
-
-# Hidden Hole
-    chown system radio /sys/class/sensors/hidden_hole/hh_ver
-    chown system radio /sys/class/sensors/hidden_hole/hh_write_all_data
-    chown system radio /sys/class/sensors/hidden_hole/hh_is_exist_efs
-    chown system radio /sys/class/sensors/hidden_hole/hh_ext_prox_th
-
 
 # Grip_sensor
     chown system radio /sys/class/sensors/grip_sensor/name
