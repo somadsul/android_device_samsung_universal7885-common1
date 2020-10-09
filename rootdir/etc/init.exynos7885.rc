@@ -702,12 +702,6 @@ service goodixd /system/bin/goodixfingerprintd
     user system
     group media_rw system
 
-# faced
-service faced /system/bin/faced
-    class late_start
-    user system
-    group system
-
 # SCE daemon
 #    service SCE-daemon /system/bin/sced
 #    class main
