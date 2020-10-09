@@ -192,9 +192,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-    
-# System properties
--include $(LOCAL_PATH)/product_prop.mk
 
 # Thermal
 PRODUCT_PACKAGES += \

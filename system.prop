@@ -1,0 +1,10 @@
+dev.usbsetting.embedded=on
+vendor.rild.libpath=/vendor/lib64/libsec-ril.so
+vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
+dev.usbsetting.embedded=on
+vendor.rild.libargs=-d
+/dev/umts_ipc0
+ro.debug_level=0x494d
+ro.hdcp2.rx=tz
+debug.sf.disable_backpressure=1
+wifi.interface=wlan0
