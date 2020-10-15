@@ -8,3 +8,7 @@ ro.debug_level=0x494d
 ro.hdcp2.rx=tz
 debug.sf.disable_backpressure=1
 wifi.interface=wlan0
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1

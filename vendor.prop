@@ -39,3 +39,8 @@ ro.oem_unlock_supported=1
 
 # FRP Partition
 ro.frp.pst=/dev/block/platform/13500000.dwmmc0/by-name/PERSISTENT
+
+persist.sys.usb.config=mtp,adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
