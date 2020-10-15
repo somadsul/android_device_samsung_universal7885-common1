@@ -89,6 +89,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # SELinux
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+include vendor/omni/sepolicy/sepolicy.mk
 
 # Vendor
 TARGET_COPY_OUT_VENDOR := vendor

@@ -40,9 +40,10 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
-endif
+DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+# ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
+# DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+# endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
